@@ -1,0 +1,19 @@
+image:
+  name: alpine:latest
+  entrypoint:
+    - '/usr/bin/env'
+    - 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+
+before_script:
+  - apk add git
+
+stages:
+  - mirror
+
+mirror:
+  script:
+    - curl -X PUT \
+      -H 'Accept: application/vnd.github.v3+json'\
+      -H "authToken: $GITHUB_AUTH"\
+      --data "{vcs:git, vcs_url:$CANNONICAL_MAIN_REPO}"\
+      https://api.github.com/repos/lcyvin/ephemeral.work/import
