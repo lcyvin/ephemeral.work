@@ -5,7 +5,7 @@ image:
     - 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
 
 before_script:
-  - apk add git bash
+  - apk add git bash curl
 
 stages:
   - mirror
