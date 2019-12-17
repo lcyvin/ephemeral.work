@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<body>
+<div class="container">
+    <div class="nav">
+        {% if not user.is_logged_in %}
+        <div id="login_signup">
+            <span id="login">{{ locale.data.nav.login }}</span>
+            <span id="signup">{{ locale.data.nav.signup }}</span>
+        </div>
+        {% endif %}
+    </div>
+    <div class="main">
+        <div class="main-inner">
+        </div>
+    </div>
+    <div class="footer">
+    </div>
+</div>
+</body>
